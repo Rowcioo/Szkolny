@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Strona Portfolio</title>
+</head>
+<body>
+    <div id="header">
+        <div id="container">
+            <nav>
+                <img src="Zdjęcia/logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">O mnie</a></li>
+                    <li><a href="#">Usługi</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Designer wnętrz</p>
+                <h1>Lorem <span>ipsum</span> <br> dolor sit amet.</h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="raw">
+                <div class="about-col-1">
+                    <img src="Zdjęcia/P.B.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">O mnie</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus ex nulla, sed pellentesque magna mollis vitae. Nullam quis mauris accumsan lacus aliquet ultricies vel id sem. Aenean a tempus libero. Etiam nec sollicitudin mi, ut suscipit ipsum. Donec ornare tellus a libero mollis, id placerat nisi elementum. Aenean nec scelerisque velit. Vestibulum lobortis nisl mauris, in sodales nisi hendrerit at.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('umiejętności')">Umiejętności</p>
+                        <p class="tab-links" onclick="opentab('doświadczenie')">Doświadczenie</p>
+                        <p class="tab-links" onclick="opentab('edukacja')">Edukacja</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="umiejętności">
+                        <ul>
+                            <li><span>Design</span><br>Profesjonalny designer wnętrz</li>
+                            <li><span>Przebudowa</span><br>Całkowita przebudowa wnętrz domu lub mieszkania</li>
+                            <li><span>Gwarancja jakości</span><br>Tak przerobionego i ładnego mieszkania nie widziałeś</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="doświadczenie">
+                        <ul>
+                            <li><span>2022 - Aktualnie</span><br>Działalność własna </li>
+                            <li><span>2020 - 2022</span><br>Praca w firmie zajmującej się architekturą wnętrz</li>
+                            <li><span>2018 - 2020</span><br>Staż w firmie BudMAX</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="edukacja">
+                        <ul>
+                            <li><span>2018</span><br>Ukończenie studiów magisterskich z Architektury wnętrz na Akademii Sztuk Pięknych im. Jana Matejki w Krakowie</li>
+                            <li><span>2016</span><br>Ukończenie studiów licencjackich z Architekrury wnętrz na Akademii Sztuk Pięknych im. Jana Matejki w Krakowie</li>
+                            <li><span>2013</span><br>Ukończenie kursu z zakresu architektury</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">Moje usługi</h1>
+            <div class="services-list">
+                <div>
+                    <h2>Design domu</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus ex nulla, sed pellentesque magna mollis vitae.</p>
+                    <a href="#">Dowiedz się więcej</a>
+                </div>
+                <div>
+                    <h2>Design mieszkania</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus ex nulla, sed pellentesque magna mollis vitae.</p>
+                    <a href="#">Dowiedz się więcej</a>
+                </div>
+                <div>
+                    <h2>Design customowy</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus ex nulla, sed pellentesque magna mollis vitae.</p>
+                    <a href="#">Dowiedz się więcej</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+
+    </script>
+
+
+</body>
+</html>

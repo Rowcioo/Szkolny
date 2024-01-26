@@ -6,7 +6,7 @@
   <body>
   
 <?php
-  echo '<p>Aplikacja do logowania</p>';
+  echo '<p><b>Aplikacja do logowania</b></p>';
   
   require('./bazacon.php');
   
@@ -23,21 +23,24 @@
                   "
                   <p>
                     <u>Zakładanie nowego konta</u><br>
-                      <form method=\"post\" action=\"./aplog.php?p=zaloz_konto\">
-                      <table>
-                      <tr>
-                        <td><b>Imie:</b></td> <td><input type=\"text\" name=\"imie1\" value=\"\"></td>
+                    <form method=\"post\" action=\"./aplog.php?p=zaloz_konto\">
+                      <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+                        <tr>
+                          <td>Login:</td>
+                          <td><input type=\"text\" name=\"login\" value=\"\"></td>
                         </tr>
-                      <tr>
-                        <td><b>Nazwisko:</b></td> <td><input type=\"text\" nazwisko=\"login\" value=\"\"><br></td>
-                      </tr>
-                      <tr>
-                        <td><b>Hasło:</b></td> <td><input type=\"text\" name=\"haslo1\" value=\"\"></td>
-                      </tr>
-                      <tr>
-                        <td><b>Hasło (powtórnie):</b></td> <td><input type=\"text\" name=\"haslo2\" value=\"\"></td>
-                      </tr>
-                        <input type=\"submit\" name=\"konto\" value=\"Załóż\">
+                        <tr>
+                          <td>Hasło:</td>
+                          <td><input type=\"text\" name=\"haslo1\" value=\"\"></td>
+                        </tr>
+                        <tr>
+                          <td>Hasło (powtórnie):</td>
+                          <td><input type=\"text\" name=\"haslo2\" value=\"\"></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td align=\"right\"><input type=\"submit\" name=\"konto\" value=\"Załóż\"></td>
+                        </tr>
                       </table>
                     </form>
                   </p>

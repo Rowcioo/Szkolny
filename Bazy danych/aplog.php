@@ -46,6 +46,41 @@
                   </p>
                   ";
               break;
+              
+              
+              case 'zaloz_konto':
+                  if (
+                        isset($_POST['login']) and 
+                        $_POST['login'] != ''  and 
+                        isset($_POST['haslo1']) and 
+                        $_POST['haslo1'] != ''  and 
+                        isset($_POST['haslo2']) and 
+                        $_POST['haslo2'] != ''  and 
+                        $_POST['haslo1'] === $_POST['haslo2']
+                     )
+                  {
+                      $q = "
+                            INSERT INTO 
+                                osoby(login, haslo)
+                              VALUES ('$_POST[login]', '$_POST[haslo1]')
+                           ";
+                      //echo "<p>$q;</p>";
+                      $r = mysqli_query($mdb, $q);                      
+                      
+                      //header('Location: ./sesje.php');
+                  }
+                  else
+                  {
+                      echo
+                      "
+                      <p>
+                        Nie podano poprawnych wartości
+                        [Powrót]
+                      </p>
+                      ";
+                  }
+                  
+              break;
           }
   } 
   else

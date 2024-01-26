@@ -77,13 +77,14 @@
                                   VALUES ('$_POST[login]', '$_POST[haslo1]')
                                ";
                           $r = mysqli_query($mdb, $q);
+                          header('Location: ./sesje.php');
                       }
                       else
                           echo
                           "
                           <p>
                             Nie założono konta. Podany login istnieje już w bazie
-                            [Powrót]
+                            <a href=\"./aplog.php?p=nowe_konto\">[Powrót]</a>
                           </p>
                           ";
                       //echo "<p>$q;</p>";

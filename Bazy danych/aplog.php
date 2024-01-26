@@ -59,15 +59,34 @@
                         $_POST['haslo1'] === $_POST['haslo2']
                      )
                   {
+                      // Sprawdzamy, czy podany login istnieje w bazie
                       $q = "
-                            INSERT INTO 
-                                osoby(login, haslo)
-                              VALUES ('$_POST[login]', '$_POST[haslo1]')
+                            SELECT login 
+                              FROM osoby
+                              WHERE login = '$_POST[login]'
                            ";
+                      $r = mysqli_query($mdb, $q);
+                      if (mysqli_num_rows($r) == 0)
+                      {
+                          // Ok, login nie istnieje 
+                          // Zapisujemy do bazy
+                          // Tworzymy nowe konto
+                          $q = "
+                                INSERT INTO 
+                                    osoby(login, haslo)
+                                  VALUES ('$_POST[login]', '$_POST[haslo1]')
+                               ";
+                          $r = mysqli_query($mdb, $q);
+                      }
+                      else
+                          echo
+                          "
+                          <p>
+                            Nie założono konta. Podany login istnieje już w bazie
+                            [Powrót]
+                          </p>
+                          ";
                       //echo "<p>$q;</p>";
-                      $r = mysqli_query($mdb, $q);                      
-                      
-                      //header('Location: ./sesje.php');
                   }
                   else
                   {

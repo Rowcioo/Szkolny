@@ -29,6 +29,11 @@
   
   if (isset($_SESSION['login']))
   {
+    $q = "
+                    SELECT login 
+                      FROM osoby
+                      WHERE login = '$_POST[login]'
+                    ";
       echo
       "
       <p>
@@ -43,7 +48,8 @@
       echo
       "
       <form method=\"post\" action=\"./sesje.php\">
-        <input type=\"text\" name=\"user\" value=\"\"><br>
+        <p>Login: <input type=\"text\" name=\"user\" value=\"\"><br></p> 
+        <p>Hasło: <input type=\"text\" name=\"user\" value=\"\"><br></p>
         <input type=\"submit\" name=\"login\" value=\"Zaloguj\">
       </form>
       ";

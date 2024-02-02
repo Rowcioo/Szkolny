@@ -43,6 +43,7 @@
                         </tr>
                       </table>
                     </form>
+                    <u><a href=\"./sesje.php?wyloguj\">Powrót do logowania</a></u>
                   </p>
                   ";
               break;
@@ -77,14 +78,13 @@
                                   VALUES ('$_POST[login]', '$_POST[haslo1]')
                                ";
                           $r = mysqli_query($mdb, $q);
-                          header('Location: ./sesje.php');
                       }
                       else
                           echo
                           "
                           <p>
                             Nie założono konta. Podany login istnieje już w bazie
-                            <a href=\"./aplog.php?p=nowe_konto\">[Powrót]</a>
+                            <a href=\"./sesje.php?wyloguj\">[Wyloguj]</a>
                           </p>
                           ";
                       //echo "<p>$q;</p>";
@@ -95,7 +95,7 @@
                       "
                       <p>
                         Nie podano poprawnych wartości
-                        [Powrót]
+                        <a href=\"./aplog.php?p=nowe_konto\">[Powrót]</a>
                       </p>
                       ";
                   }
@@ -119,7 +119,7 @@
       echo
       "
       <p>
-        Załóż <a href=\"./aplog.php?p=nowe_konto\">[Nowe konto]</a>
+        Załóż <a href=\"./aplog.php?p=nowe_konto\">[Powrót]</a>
       </p>
       ";
   }
